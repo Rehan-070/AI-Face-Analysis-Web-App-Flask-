@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Detection</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="shortcut icon" type="image/png"
+          href="https://logomaker.designfreelogoonline.com/media/productdesigner/logo/resized/1286_bird-02.png"/>
+</head>
+
+<body class="bg-[url('https://images.unsplash.com/photo-1638443523564-46b8a648c5a1?fm=jpg&q=60&w=3000')] bg-no-repeat bg-cover bg-center bg-fixed">
+
+<div class="min-h-screen">
+
+    <!-- NAVBAR -->
+    <header class="absolute inset-x-0 top-0 z-50">
+        <nav class="flex items-center justify-between p-6 lg:px-8">
+
+            <div class="flex items-center">
+                <img class="h-8 w-auto rounded-full"
+                     src="https://logomaker.designfreelogoonline.com/media/productdesigner/logo/resized/1286_bird-02.png">
+                <span class="text-transparent bg-clip-text bg-gradient-to-tr from-[#211f4e] to-[#1ec3c0] px-2 font-bold font-serif text-lg">
+                    UR ~>
+                </span>
+            </div>
+
+            <div class="hidden lg:flex lg:gap-x-12">
+                <a href="/" class="text-gray-300 uppercase font-extrabold text-sm">Home</a>
+                <a href="/adult" class="text-transparent bg-clip-text bg-gradient-to-tr from-[#ff5cf4] to-[#00fbff] uppercase font-extrabold text-sm hover:text-white">
+                    Adult
+                </a>
+                <a href="/baby" class="text-transparent bg-clip-text bg-gradient-to-tr from-[#ff5cf4] to-[#00fbff] uppercase font-extrabold text-sm hover:text-white">
+                    Baby
+                </a>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <div class="mx-auto max-w-7xl py-32 sm:px-6 lg:px-8 shadow-2xl shadow-black hover:shadow-white transition duration-500">
+
+        <div class="flex backdrop-blur-sm bg-white/10 rounded-3xl" style="height:600px;">
+
+            <!-- LEFT CONTENT -->
+            <div class="flex items-center text-center lg:text-left px-8 md:px-12 lg:w-1/2">
+                <div>
+
+                    <h2 class="font-serif font-extrabold bg-gradient-to-r from-cyan-500 via-green-500 to-purple-600 bg-clip-text text-4xl text-transparent uppercase">
+                        AI Facial Analysis
+                    </h2>
+
+                    <p class="py-4 mt-4 font-semibold font-serif bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-2xl text-transparent">
+                        Detect Gender & Emotions using advanced Deep Learning models.
+                        Choose the detection type below and upload your image.
+                    </p>
+
+                    <div class="flex flex-col lg:flex-row gap-6 mt-8 justify-center lg:justify-start">
+
+                        <!-- ADULT BUTTON -->
+                        <a href="/adult"
+                           class="bg-gradient-to-b text-white hover:text-cyan-300 font-extrabold font-serif from-gray-800 to-gray-600 px-10 py-3 rounded-2xl shadow-gray-500 shadow-md border-b-4 hover:border-b border-gray-400 hover:shadow-sm transition-all duration-500">
+                            Adult Detection
+                        </a>
+
+                        <!-- BABY BUTTON -->
+                        <a href="/baby"
+                           class="bg-gradient-to-b text-white hover:text-pink-300 font-extrabold font-serif from-indigo-800 to-indigo-600 px-10 py-3 rounded-2xl shadow-indigo-500 shadow-md border-b-4 hover:border-b border-indigo-400 hover:shadow-sm transition-all duration-500">
+                            Baby Detection
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="hidden lg:block lg:w-1/2"
+                 style="clip-path:polygon(10% 0, 100% 0%, 100% 100%, 0 100%)">
+
+                <div class="h-full bg-no-repeat bg-cover bg-center"
+                     style="background-image: url('https://deeplobe.ai/wp-content/uploads/2022/02/Main-1.jpg')">
+                    <div class="h-full bg-black opacity-25 rounded-r-3xl"></div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{% include 'footer.html' %}
+
+</body>
+</html>
