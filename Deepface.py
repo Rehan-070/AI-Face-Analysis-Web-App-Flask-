@@ -1,21 +1,11 @@
 from deepface import DeepFace
-import os
 
-os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
-
-def detect_baby(image_path):
+def detect_baby(img_path):
 
     result = DeepFace.analyze(
-        img_path=image_path,
-        actions=["gender", "age", "race", "emotion"],
+        img_path=img_path,
+        actions=['gender','emotion','race'],
         enforce_detection=False
     )
 
-    data = result[0]
-
-    return {
-        "gender": data["gender"],
-        "age": data["age"],
-        "race": data["race"],
-        "emotion": data["emotion"]
-    }
+    return result[0]

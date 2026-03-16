@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black text-white text-center p-10">
+
+<h1 class="text-3xl mb-6">Adult Live Detection</h1>
+
+<img src="{{ url_for('adult_video') }}"
+class="mx-auto border-4 border-green-500 w-[700px]">
+
+<p class="mt-6 animate-pulse">Scanning face...</p>
+
+<script>
+setInterval(async ()=>{
+let res = await fetch("/adult_status")
+let data = await res.json()
+if(data.done){
+window.location="/adult_live_result"
+}
+},1000)
+</script>
+
+</body>
+</html>

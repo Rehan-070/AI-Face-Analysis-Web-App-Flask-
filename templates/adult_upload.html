@@ -1,76 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Adult Upload</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="shortcut icon" type="image/png"
-          href="https://logomaker.designfreelogoonline.com/media/productdesigner/logo/resized/1286_bird-02.png"/>
+<meta charset="UTF-8">
+<title>Adult Upload</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="shortcut icon" type="image/png"
+href="https://logomaker.designfreelogoonline.com/media/productdesigner/logo/resized/1286_bird-02.png"/>
+
 </head>
+
 
 <body class="bg-[url('https://ionetworks.co/images/2021/product/526_%E8%BD%89%E6%8F%9B-01.png')] bg-no-repeat bg-cover bg-center bg-fixed">
 
-<header class="absolute inset-x-0 top-0 z-50">
-    <nav class="flex items-center justify-between p-6 lg:px-8">
-        <div class="flex items-center">
-            <img class="h-8 w-auto rounded-full"
-                 src="https://logomaker.designfreelogoonline.com/media/productdesigner/logo/resized/1286_bird-02.png">
-            <span class="text-transparent bg-clip-text bg-gradient-to-tr from-[#211f4e] to-[#1ec3c0] px-2 font-bold font-serif text-lg">
-                UR ~>
-            </span>
-        </div>
 
-        <div class="hidden lg:flex lg:gap-x-12">
-            <a href="/" class="text-transparent bg-clip-text bg-gradient-to-tr from-[#ff5cf4] to-[#00fbff] uppercase font-extrabold text-sm">
-                Home
-            </a>
-            <span class="text-gray-300 uppercase font-extrabold text-sm">Adult Detection</span>
-        </div>
-    </nav>
+<header class="absolute inset-x-0 top-0 z-50">
+
+<nav class="flex items-center justify-between p-6 lg:px-8">
+
+<div class="flex items-center">
+
+<img class="h-8 w-auto rounded-full"
+src="https://logomaker.designfreelogoonline.com/media/productdesigner/logo/resized/1286_bird-02.png">
+
+<span class="text-transparent bg-clip-text bg-gradient-to-tr from-[#211f4e] to-[#1ec3c0] px-2 font-bold font-serif text-lg">
+UR ~>
+</span>
+
+</div>
+
+
+<div class="hidden lg:flex lg:gap-x-12">
+
+<a href="/"
+class="text-transparent bg-clip-text bg-gradient-to-tr from-[#ff5cf4] to-[#00fbff] uppercase font-extrabold text-sm">
+Home
+</a>
+
+<span class="text-gray-300 uppercase font-extrabold text-sm">
+Adult Detection
+</span>
+
+</div>
+
+</nav>
 </header>
 
+
+
 <div class="flex h-screen w-full items-center justify-center">
-    <div class="rounded-xl bg-gray-800 bg-opacity-55 px-16 py-10 backdrop-blur-md shadow-2xl shadow-black hover:shadow-blue-500">
 
-        <div class="text-white text-center">
-            <img src="https://logomaker.designfreelogoonline.com/media/productdesigner/logo/resized/1286_bird-02.png"
-                 width="120" class="rounded-full mx-auto mb-6"/>
+<div class="rounded-xl bg-gray-800 bg-opacity-55 px-16 py-10 backdrop-blur-md shadow-2xl shadow-black hover:shadow-blue-500">
 
-            <p class="text-transparent bg-clip-text bg-gradient-to-tr from-[#ff5cf4] to-[#00fbff] uppercase font-serif font-extrabold">
-                Upload an adult face image
-            </p>
+<div class="text-white text-center">
 
-            <form method="POST" enctype="multipart/form-data"
-                  action="/adult_result" class="mt-8">
 
-                <input type="file" name="image" accept="image/*" required
-                       class="rounded-lg bg-blue-500 py-3 px-6 text-xs font-bold uppercase text-white hover:bg-white hover:text-blue-500 transition-all"/>
+<img src="https://logomaker.designfreelogoonline.com/media/productdesigner/logo/resized/1286_bird-02.png"
+width="120"
+class="rounded-full mx-auto mb-6"/>
 
-                <div class="mt-8">
-                    <input type="submit" value="Analyze"
-                           class="font-serif font-extrabold py-3 px-8 rounded-lg bg-blue-500 hover:bg-white text-xs uppercase text-white hover:text-blue-500 transition-all">
-                </div>
-            </form>
 
-            <!-- Loading Button -->
-            <div class="mt-6">
-                <button id="loader" style="display:none;"
-                        class="py-2 px-5 text-sm bg-white rounded-lg inline-flex items-center">
-                    Processing...
-                </button>
-            </div>
+<p class="text-transparent bg-clip-text bg-gradient-to-tr from-[#ff5cf4] to-[#00fbff] uppercase font-serif font-extrabold">
+Upload an adult face image
+</p>
 
-        </div>
-    </div>
+
+
+<form id="uploadForm"
+method="POST"
+enctype="multipart/form-data"
+action="/adult_result"
+class="mt-8">
+
+
+<!-- Upload + Live Camera -->
+<div class="flex items-center justify-center gap-4 flex-wrap">
+
+<input type="file"
+name="image"
+accept="image/*"
+required
+class="rounded-lg bg-blue-500 py-3 px-6 text-xs font-bold uppercase text-white hover:bg-white hover:text-blue-500 transition-all"/>
+
+
+<span class="text-gray-300 text-sm font-semibold">
+OR
+</span>
+
+
+<a href="/adult_live"
+class="rounded-lg bg-purple-500 py-3 px-6 text-xs font-bold uppercase text-white hover:bg-white hover:text-purple-500 transition-all">
+Use Live Camera
+</a>
+
 </div>
+
+
+
+<div class="mt-8">
+
+<input
+id="analyzeBtn"
+type="submit"
+value="Analyze"
+class="font-serif font-extrabold py-3 px-8 rounded-lg bg-blue-500 hover:bg-white text-xs uppercase text-white hover:text-blue-500 transition-all">
+
+</div>
+
+
+</form>
+
+
+
+<div class="mt-6 text-center">
+
+<button id="loader"
+disabled
+type="button"
+style="display:none;"
+class="py-2.5 px-5 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 inline-flex items-center">
+
+
+<svg aria-hidden="true"
+role="status"
+class="inline w-4 h-4 me-3 text-gray-200 animate-spin"
+viewBox="0 0 100 101"
+fill="none"
+xmlns="http://www.w3.org/2000/svg">
+
+
+<path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 
+0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 
+0.59082 100 22.9766 100 50.5908Z"
+fill="currentColor"/>
+
+
+<path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 
+97.0079 33.5539C95.2932 28.8227 92.871 24.3692 
+89.8167 20.348C85.8452 15.1192 80.8826 
+10.7238 75.2124 7.41289"
+fill="#1C64F2"/>
+
+</svg>
+
+Processing...
+
+</button>
+
+</div>
+
+
+</div>
+</div>
+</div>
+
+
 
 {% include 'footer.html' %}
 
+
+
 <script>
-document.querySelector("form").addEventListener("submit", function(){
-    document.getElementById("loader").style.display = "inline-flex";
+
+const form = document.getElementById("uploadForm");
+const loader = document.getElementById("loader");
+const analyzeBtn = document.getElementById("analyzeBtn");
+
+form.addEventListener("submit", function(){
+
+loader.style.display = "inline-flex";
+analyzeBtn.style.display = "none";
+
 });
+
 </script>
+
 
 </body>
 </html>
