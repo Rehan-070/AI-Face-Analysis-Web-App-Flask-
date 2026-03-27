@@ -51,14 +51,25 @@ Upload a baby face image
 
 <form id="uploadForm" method="POST" enctype="multipart/form-data" action="/baby_result" class="mt-8">
 
-<!-- Upload Only -->
-<div class="flex items-center justify-center">
+<!-- Upload + Live Framing -->
+<div class="flex items-center justify-center gap-4 flex-wrap">
 
 <input type="file"
 name="image"
 accept="image/*"
 required
 class="rounded-lg bg-blue-500 py-3 px-6 text-xs font-bold uppercase text-white hover:bg-white hover:text-blue-500 transition-all"/>
+
+
+<span class="text-gray-300 text-sm font-semibold">
+OR
+</span>
+
+
+<a href="/baby_live_frame"
+class="rounded-lg bg-green-500 py-3 px-6 text-xs font-bold uppercase text-white hover:bg-white hover:text-green-600 transition-all">
+🎯 Live Framing
+</a>
 
 </div>
 

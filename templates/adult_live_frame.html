@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Adult Live Framing</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black text-white text-center p-10">
+
+<header class="absolute inset-x-0 top-0 z-50">
+<nav class="flex items-center justify-between p-6 lg:px-8">
+<div class="flex items-center">
+<img class="h-8 rounded-full"
+src="https://logomaker.designfreelogoonline.com/media/productdesigner/logo/resized/1286_bird-02.png">
+<span class="text-transparent bg-clip-text bg-gradient-to-tr from-[#211f4e] to-[#1ec3c0] px-2 font-bold font-serif text-lg">
+UR ~>
+</span>
+</div>
+<a href="/adult" class="text-transparent bg-clip-text bg-gradient-to-tr from-[#ff5cf4] to-[#00fbff] uppercase font-extrabold text-sm">
+Back
+</a>
+</nav>
+</header>
+
+<div class="pt-24">
+
+<h1 class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-[#ff5cf4] to-[#00fbff] mb-2">
+Adult Live Framing
+</h1>
+
+<p class="text-gray-400 mb-6 animate-pulse text-sm">
+Real-time face detection with Gender &amp; Emotion labels
+</p>
+
+<!-- Live stream from Flask -->
+<img src="{{ url_for('adult_live_frame_feed') }}"
+class="mx-auto border-4 border-green-500 rounded-xl shadow-2xl shadow-green-500/30 w-[700px]">
+
+<div class="mt-6 flex items-center justify-center gap-3">
+<span class="inline-block w-3 h-3 bg-green-400 rounded-full animate-pulse"></span>
+<span class="text-green-400 text-sm font-bold uppercase tracking-widest">Live</span>
+</div>
+
+<!-- Legend -->
+<div class="mt-8 flex items-center justify-center gap-8 text-sm">
+<div class="flex items-center gap-2">
+<span class="inline-block w-4 h-1 bg-green-400"></span>
+<span class="text-gray-300">Face Frame</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-block w-4 h-4 bg-blue-400 rounded-full"></span>
+<span class="text-gray-300">Gender</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-block w-4 h-4 bg-pink-400 rounded-full"></span>
+<span class="text-gray-300">Emotion</span>
+</div>
+</div>
+
+<div class="mt-8">
+<a href="/adult"
+class="rounded-lg bg-gray-700 py-3 px-8 text-xs font-bold uppercase text-white hover:bg-white hover:text-gray-700 transition-all">
+← Back to Upload
+</a>
+</div>
+
+</div>
+
+</body>
+</html>
